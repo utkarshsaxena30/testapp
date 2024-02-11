@@ -2,7 +2,6 @@ package com.buckets.springboot.demo.testapp1.common;
 
 import org.springframework.stereotype.Component;
 
-@Component
 public class BaseballCoach implements Coach {
     @Override
     public String getDailyWorkout() {
