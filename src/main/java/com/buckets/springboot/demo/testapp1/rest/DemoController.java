@@ -12,6 +12,7 @@ public class DemoController {
     @Autowired
     DemoController(@Qualifier("tennisCoach") Coach theCoach) {
         myCoach = theCoach;
+        System.out.println("In constructor: " + getClass().getSimpleName());
     }
 
     @GetMapping("/")
