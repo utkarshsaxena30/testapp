@@ -9,13 +9,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
     private final Coach myCoach;
+    private final Coach otherCoach;
     @Autowired
-    DemoController(@Qualifier("tennisCoach") Coach theCoach) {
+    DemoController(@Qualifier("tennisCoach") Coach theCoach, @Qualifier("tennisCoach") Coach theOtherCoach) {
         myCoach = theCoach;
+        otherCoach = theOtherCoach;
     }
 
     @GetMapping("/")
     public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
     }
+
+    @GetMapping("/check")
+    public String check() {
+        return "Are instances same: " + (myCoach == otherCoach ? "true" : "false");
+    }
+
 }
