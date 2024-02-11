@@ -3,9 +3,10 @@ package com.buckets.springboot.demo.testapp1.common;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CricketCoach implements Coach {
+public class TennisCoach implements Coach {
+
     @Override
     public String getDailyWorkout() {
-        return "Practice fast bowling for 15 minutes!";
+        return "Practice serving for 30 minutes!";
     }
 }

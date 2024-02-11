@@ -1,7 +1,8 @@
-package com.buckets.springboot.demo.testapp1.common;
+package com.buckets.springboot.demo.testapp1.rest;
 
-import com.buckets.springboot.demo.testapp1.rest.Coach;
+import com.buckets.springboot.demo.testapp1.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     private final Coach myCoach;
     @Autowired
-    DemoController(Coach theCoach) {
+    DemoController(@Qualifier("tennisCoach") Coach theCoach) {
         myCoach = theCoach;
     }
 
